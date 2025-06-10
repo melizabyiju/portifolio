@@ -1,0 +1,218 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f0f0f0;
+  overflow: hidden;
+}
+
+.container {
+  width: 400px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+  overflow: hidden;
+  perspective: 1200px;
+}
+
+.pages {
+  position: relative;
+  height: 550px;
+  overflow: hidden;
+}
+
+.page {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  padding: 40px 30px 30px 30px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: inset 0 0 60px rgba(255,255,255,0.1);
+  transform-style: preserve-3d;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(100%) scale(0.8) rotateY(15deg);
+  transition: opacity 0.5s ease, transform 0.6s ease;
+}
+
+.page.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0) scale(1) rotateY(0deg);
+  z-index: 10;
+}
+
+.page.exit-left {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-100%) scale(0.8) rotateY(-15deg);
+  transition: opacity 0.4s ease, transform 0.5s ease;
+}
+
+.profile-content img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #00ffc3;
+  margin-bottom: 20px;
+  box-shadow: 0 0 15px #00ffc3;
+  transition: transform 0.8s ease;
+  cursor: pointer;
+}
+.profile-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers horizontally */
+  padding-top: 30px;   /* adds some space from top */
+}
+
+.profile-content img:hover {
+     transform: scale(1.05);}
+
+h1 {
+  font-weight: 700;
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+  color: #00ffc3;
+  text-align: center;
+  user-select: none;
+}
+
+p.subtitle {
+  font-weight: 500;
+  color: #a0a0a0;
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 1rem;
+  letter-spacing: 1.2px;
+  user-select: none;
+}
+
+ul {
+  list-style: none;
+  margin-bottom: 30px;
+  padding-left: 0;
+  line-height: 1.5;
+}
+
+ul li {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: #d0d0d0;
+  user-select: none;
+}
+
+.socials {
+  text-align: center;
+  margin-bottom: 30px;
+  user-select: none;
+}
+
+.socials a {
+  color: #00ffc3;
+  margin: 0 12px;
+  font-size: 1.6rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  line-height: 1;
+}
+.socials a:hover,
+.socials a:focus {
+  color: #00b386;
+  transform: scale(1.2);
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+  background: #00ffc3;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #02332a;
+  box-shadow: 0 4px 15px rgba(0,255,195,0.6);
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+button:hover,
+button:focus {
+  background: #00b386;
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0,179,134,0.8);
+  outline: none;
+}
+
+.next-btn {
+  float: right;
+}
+
+.prev-btn {
+  float: left;
+  background: transparent;
+  color: #00ffc3;
+  box-shadow: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 8px 15px;
+  transition: color 0.3s ease, background 0.3s ease;
+}
+.prev-btn:hover,
+.prev-btn:focus {
+  color: #00b386;
+  background: rgba(0,255,195,0.15);
+  border-radius: 20px;
+  outline: none;
+}
+
+a.contact-link {
+  color: #00ffc3;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  user-select: text;
+}
+a.contact-link:hover,
+a.contact-link:focus {
+  color: #00b386;
+  text-decoration: underline;
+  outline: none;
+}
+
+.content {
+  max-height: 420px;
+  overflow-y: auto;
+  padding-right: 5px;
+  user-select: text;
+}
+.content::-webkit-scrollbar {
+  width: 5px;
+}
+.content::-webkit-scrollbar-thumb {
+  background: #00ffc3;
+  border-radius: 10px;
+}
+
+h1 {
+  border-bottom: 2px solid #00ffc3;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+  letter-spacing: 1.3px;
+  user-select: none;
+}
+
